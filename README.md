@@ -38,8 +38,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ````
 
+If it doesn't work on linux (debian based), try this:
+````
+sudo apt-get install libasound-dev
+sudo apt-get install portaudio19-dev
+pip install --upgrade --force-reinstall pyaudio
+pip install -r requirements.txt
+````
+
 Change the .env with the path of the web browser you want the application to use.
 ## Authors
 
 - [@Namularbre](https://github.com/Namularbre)
-
