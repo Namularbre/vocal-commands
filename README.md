@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 Linux:
 ````
-source venv/bin/activate  # Pour les utilisateurs Linux/Mac
+source venv/bin/activate
 pip install -r requirements.txt
 ````
 
