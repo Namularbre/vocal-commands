@@ -4,7 +4,7 @@ gTTS~=2.4.0
 requests~=2.31.0
 pip~=23.3.1
 cryptography~=41.0.7
-setuptools~==65.5.0
+setuptools~=65.5.0
 python-dotenv~=1.0.0
 pygame~=2.5.2
 requests~=2.31.0
