@@ -2,7 +2,6 @@ import requests
 
 
 def http_get(url: str, params=None) -> str | None:
-    print(f"GET REQUEST: {url}")
     if params is None:
         params = {}
     response = requests.get(url, params=params)

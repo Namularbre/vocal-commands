@@ -11,6 +11,5 @@ def search_on_browser(query: str) -> None:
             webbrowser.get('web_browser').open_new_tab(search_url)
         else:
             webbrowser.open_new_tab(search_url)
-        print(f"Web browser open on {search_url}")
     except FileNotFoundError as e:
         print(f"Unable to open web browser with path {firefox_path} : {e}")

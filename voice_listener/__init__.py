@@ -5,6 +5,7 @@ from text_to_speech import synthesize_speech
 
 __recognizer = sr.Recognizer()
 __command_invoker = VocalCommandInvoker()
+__green = '\033[92m'
 
 
 def capture_voice_input() -> None:
@@ -13,7 +14,7 @@ def capture_voice_input() -> None:
         while True:
             audio_data = __recognizer.listen(source)
             text_data = convert_voice_to_text(audio_data=audio_data)
-            print("What the application understood: " + text_data)
+            print(__green + "Vous : " + text_data)
             if text_data:
                 __command_invoker.run_command(data=text_data)
 

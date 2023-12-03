@@ -16,7 +16,6 @@ def get_weather() -> str:
 def __stringify_weather_data(current_weather: dict) -> str:
     current_temperature = current_weather["temperature_2m"]
     current_time = datetime.fromisoformat(current_weather["time"]).strftime("%Hh%Mm, le %d/%m/%Y")
-    print(current_time)
     apparent_temperature = current_weather["apparent_temperature"]
     weather_code = current_weather["weather_code"]
     weather_str = __weather_code_to_str(weather_code)
