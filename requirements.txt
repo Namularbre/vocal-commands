@@ -1,0 +1,4 @@
+PyAudio=0.2.14
+SpeechRecognition=3.10.0
+gTTS=2.4.0
+requests=2.31.0
