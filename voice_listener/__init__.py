@@ -1,6 +1,5 @@
 import speech_recognition as sr
 
-from logger import logger
 from vocal_command import VocalCommandInvoker
 from text_to_speech import synthesize_speech
 
@@ -14,7 +13,7 @@ def capture_voice_input() -> None:
         while True:
             audio_data = __recognizer.listen(source)
             text_data = convert_voice_to_text(audio_data=audio_data)
-            logger.info("What the application understood: " + text_data)
+            print("What the application understood: " + text_data)
             if text_data:
                 __command_invoker.run_command(data=text_data)
 
@@ -26,5 +25,5 @@ def convert_voice_to_text(audio_data: sr.AudioData) -> str:
     except sr.UnknownValueError:
         synthesize_speech("Désolé, je n'ai pas compris.")
     except sr.RequestError as e:
-        logger.critical("Error; {0}".format(e))
+        print("Error; {0}".format(e))
     return text

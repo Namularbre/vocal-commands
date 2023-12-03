@@ -1,9 +1,8 @@
 import requests
-from logger import logger
 
 
 def http_get(url: str, params=None) -> str | None:
-    logger.debug(f"GET REQUEST: {url}")
+    print(f"GET REQUEST: {url}")
     if params is None:
         params = {}
     response = requests.get(url, params=params)

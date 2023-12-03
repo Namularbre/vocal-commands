@@ -47,7 +47,7 @@ class VocalCommandInvoker:
 
 class HelloCommand(VocalCommand):
     def __init__(self) -> None:
-        super().__init__(name="bonjour", description="Vous répond bonjour.")
+        super().__init__(name="bonjour", description="Vous réponds bonjour.")
 
     def run(self, data: str | None = None) -> None:
         synthesize_speech("Bonjour !")

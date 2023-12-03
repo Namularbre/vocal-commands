@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 
-from logger import logger
 from http_client.http_get import http_get
 
 
@@ -58,5 +57,5 @@ def __weather_code_to_str(weather_code: int) -> str:
         }
         return __weather_code_to_str_dict[weather_code]
     except KeyError as e:
-        logger.critical(f"Received an unknown weather_code : {e}")
+        print(f"Received an unknown weather_code : {e}")
         return "inconnu"
