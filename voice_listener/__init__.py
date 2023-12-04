@@ -1,5 +1,4 @@
 import speech_recognition as sr
-
 from vocal_command import VocalCommandInvoker
 from text_to_speech import synthesize_speech
 
@@ -10,8 +9,11 @@ __reset = '\033[0m'
 
 
 def capture_voice_input() -> None:
-    synthesize_speech("Bonjour ! Comment puis-je vous aidez ?")
-    with sr.Microphone(device_index=1) as source:
+    synthesize_speech("Bonjour ! Comment puis-je vous aider ?")
+    microphone_names = sr.Microphone.list_microphone_names()
+    microphone_index = 0 if microphone_names else None
+
+    with sr.Microphone(device_index=microphone_index) as source:
         while True:
             audio_data = __recognizer.listen(source)
             text_data = convert_voice_to_text(audio_data=audio_data)
