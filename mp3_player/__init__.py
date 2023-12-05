@@ -21,3 +21,5 @@ def __remove_audio_file(file_name: str) -> None:
         os.remove(file_name)
     except FileNotFoundError:
         print(f"Unable to remove nonexistent file {file_name}")
+    except PermissionError:
+        print(f"The application doesn't have the permissions to remove {file_name}")
