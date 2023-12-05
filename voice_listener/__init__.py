@@ -8,10 +8,37 @@ __green = '\033[92m'
 __reset = '\033[0m'
 
 
-def capture_voice_input() -> None:
-    synthesize_speech("Bonjour ! Comment puis-je vous aider ?")
+def __input_microphone_index(max_index: int) -> int:
+    str_choice = input("Enter the number of the microphone you want to use:")
+    try:
+        choice = int(str_choice)
+        if max_index < choice:
+            print("Error, try again")
+            return __input_microphone_index(max_index)
+        else:
+            return choice
+    except Exception as e:
+        print("Error, try again")
+        return __input_microphone_index(max_index)
+
+
+def choose_microphone() -> int | None:
     microphone_names = sr.Microphone.list_microphone_names()
-    microphone_index = 0 if microphone_names else None
+    if microphone_names:
+        index = 0
+
+        for microphone_name in microphone_names:
+            print(microphone_name + " index: " + str(index))
+            index += 1
+        return __input_microphone_index(max_index=index)
+    else:
+        print("No microphone detected.")
+        return None
+
+
+def capture_voice_input() -> None:
+    microphone_index = choose_microphone()
+    synthesize_speech("Bonjour ! Comment puis-je vous aider ?")
 
     with sr.Microphone(device_index=microphone_index) as source:
         while True:
