@@ -12,12 +12,12 @@ def __input_microphone_index(max_index: int) -> int:
     str_choice = input("Enter the number of the microphone you want to use:")
     try:
         choice = int(str_choice)
-        if max_index < choice:
-            print("Error, try again")
+        if max_index < choice and choice >= 0:
+            print(f"The number must be between 0 and {max_index - 1}")
             return __input_microphone_index(max_index)
         else:
             return choice
-    except Exception as e:
+    except ValueError:
         print("Error, try again")
         return __input_microphone_index(max_index)
 
