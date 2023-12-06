@@ -26,7 +26,6 @@ def choose_microphone() -> int | None:
     microphone_names = sr.Microphone.list_microphone_names()
     if microphone_names:
         index = 0
-
         for microphone_name in microphone_names:
             print(microphone_name + " index: " + str(index))
             index += 1
@@ -43,13 +42,13 @@ def capture_voice_input() -> None:
     with sr.Microphone(device_index=microphone_index) as source:
         while True:
             audio_data = __recognizer.listen(source)
-            text_data = convert_voice_to_text(audio_data=audio_data)
+            text_data = __convert_voice_to_text(audio_data=audio_data)
             print(__green + "Vous : " + text_data + __reset)
             if text_data:
                 __command_invoker.run_command(data=text_data)
 
 
-def convert_voice_to_text(audio_data: sr.AudioData) -> str:
+def __convert_voice_to_text(audio_data: sr.AudioData) -> str:
     text: str = ""
     try:
         text = __recognizer.recognize_google(audio_data, language="fr-FR")
