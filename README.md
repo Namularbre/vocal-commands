@@ -7,7 +7,7 @@ Vocal commands is a little application that able you to ask it to do sings, like
 - Close the app if you say "Au revoir"
 - Repeat what you said if you say "répéte"
 - Give you the weather (only for Limoges only, still WIP) if you say "météo"
-- Can search something on your browser with "cherche" followed by what you search
+- Can search something on your browser with "cherche" followed by what you want to search
 
 
 
