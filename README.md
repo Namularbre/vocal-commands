@@ -46,7 +46,8 @@ pip install --upgrade --force-reinstall pyaudio
 pip install -r requirements.txt
 ````
 
-Change the .env with the path of the web browser you want the application to use.
+Change the .env with the path of the web browser you want to use and select a microphone index to indicate witch device the application will listen on.
+
 ## Authors
 
 - [@Namularbre](https://github.com/Namularbre)
