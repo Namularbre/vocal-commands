@@ -4,7 +4,6 @@ from os import getenv
 
 def search_on_browser(query: str) -> None:
     web_browser_path = getenv("WEB_BROWSER_PATH")
-    print(web_browser_path)
     search_url = "https://www.google.com/search?q=" + query.strip()
     try:
         if web_browser_path:
